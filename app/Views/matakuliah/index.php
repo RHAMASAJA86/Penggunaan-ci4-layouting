@@ -1,10 +1,46 @@
 ﻿<?= $this->extend('layouts/main') ?>
+
 <?= $this->section('content') ?>
+
 <h2>Data Mata Kuliah</h2>
+
 <table>
-    <tr><th>Kode</th><th>Nama Mata Kuliah</th><th>SKS</th></tr>
-    <tr><td>SI101</td><td>Pemrograman Web</td><td>3</td></tr>
-    <tr><td>SI102</td><td>Sistem Informasi</td><td>3</td></tr>
-    <tr><td>SI103</td><td>Basis Data</td><td>3</td></tr>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Kode Mata Kuliah</th>
+            <th>Nama Mata Kuliah</th>
+            <th>SKS</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <?php if (empty($matakuliah)): ?>
+
+            <tr>
+                <td colspan="4">Data mata kuliah belum tersedia.</td>
+            </tr>
+
+        <?php else: ?>
+
+            <?php foreach ($matakuliah as $i => $mk): ?>
+
+                <tr>
+                    <td><?= $i + 1 ?></td>
+
+                    <td><?= esc($mk['kode']) ?></td>
+
+                    <td><?= esc($mk['nama']) ?></td>
+
+                    <td><?= esc($mk['sks']) ?></td>
+                </tr>
+
+            <?php endforeach; ?>
+
+        <?php endif; ?>
+
+    </tbody>
 </table>
+
 <?= $this->endSection() ?>
