@@ -6,8 +6,8 @@
 <h2>Tentang Saya</h2>
 <table>
     <tr><th>Keterangan</th><th>Data</th></tr>
-    <tr><td>Nama</td><td>Nama Lengkap Anda</td></tr>
-    <tr><td>NIM</td><td>NIM Anda</td></tr>
+    <tr><td>Nama</td><td>M Ubaydillah Romadhon</td></tr>
+    <tr><td>NIM</td><td>202457201031</td></tr>
     <tr><td>Program Studi</td><td>Sistem Informasi</td></tr>
     <tr><td>Semester</td><td>V</td></tr>
     <tr><td>Mata Kuliah</td><td>Pemrograman Web II</td></tr>
