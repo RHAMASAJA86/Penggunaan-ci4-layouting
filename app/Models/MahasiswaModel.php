@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 use CodeIgniter\Model;
 class MahasiswaModel extends Model {
     protected $table = 'mahasiswa';
@@ -33,13 +33,13 @@ class MahasiswaModel extends Model {
     public function getByProdi($prodi) {
         return $this->db
             ->table('mahasiswa')
-            ->where('prodi','$prodi')
+            ->where('prodi', $prodi)
             ->get()
-            -getResultArray();
+            ->getResultArray();
     }
 
     public function getDataUrut() {
-        return $this->dba
+        return $this->db
             ->teble('mahasiswa')
             ->orderBy('nama','ASC')
             ->get()
@@ -47,4 +47,3 @@ class MahasiswaModel extends Model {
     }
     
 }
-?>
