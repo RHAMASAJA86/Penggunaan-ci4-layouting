@@ -14,6 +14,7 @@ $routes->get('mahasiswa/create', 'Mahasiswa::create');
 $routes->post('mahasiswa/store', 'Mahasiswa::store');
 $routes->get('mahasiswa/edit/(:num)', 'Mahasiswa::edit/$1');
 $routes->post('mahasiswa/update/(:num)', 'Mahasiswa::update/$1');
+$routes->post('mahasiswa/delete/(:num)', 'Mahasiswa::delete/$1');
 // CRUD Data Dosen
 $routes->get('dosen/create', 'Dosen::create');
 $routes->post('dosen/store', 'Dosen::store');
