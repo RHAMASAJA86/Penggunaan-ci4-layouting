@@ -1,4 +1,4 @@
-# Dokumentasi PBL : CRUD Mahasiswa
+# Dokumentasi PBL: CRUD Mahasiswa
 
 ## Ruang lingkup
 
