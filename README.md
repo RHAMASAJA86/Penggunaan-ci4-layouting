@@ -30,14 +30,6 @@ Proyek mengelola data **mahasiswa, dosen, dan mata kuliah** menggunakan CodeIgni
 | Mata Kuliah | `http://localhost:8080/mata-kuliah` |
 | Tentang | `http://localhost:8080/tentang` |
 
-## Panduan pengujian dan bukti pengumpulan
-
-1. Buka halaman **Mahasiswa**, **Dosen**, dan **Mata Kuliah** untuk memastikan daftar memuat data awal.
-2. Pada setiap halaman, pilih tombol **Tambah**, isi field, lalu simpan. Pastikan data tampil di daftar.
-3. Pilih **Edit**, ubah nilai, lalu simpan perubahan.
-4. Pilih **Hapus** dan konfirmasi. Pastikan baris hilang dari daftar.
-5. Coba kirim formulir kosong untuk memastikan validasi menolak data yang tidak lengkap.
-6. Ambil screenshot daftar serta hasil tambah, ubah, dan hapus untuk bukti pengumpulan. Hindari menampilkan password database pada screenshot konfigurasi.
 
 ## Catatan
 
