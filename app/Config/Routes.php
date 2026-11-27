@@ -21,3 +21,9 @@ $routes->post('dosen/store', 'Dosen::store');
 $routes->get('dosen/edit/(:segment)', 'Dosen::edit/$1');
 $routes->post('dosen/update/(:segment)', 'Dosen::update/$1');
 $routes->post('dosen/delete/(:segment)', 'Dosen::delete/$1');
+// CRUD Mata Kuliah
+$routes->get('mata-kuliah/create', 'MataKuliah::create');
+$routes->post('mata-kuliah/store', 'MataKuliah::store');
+$routes->get('mata-kuliah/edit/(:segment)', 'MataKuliah::edit/$1');
+$routes->post('mata-kuliah/update/(:segment)', 'MataKuliah::update/$1');
+$routes->post('mata-kuliah/delete/(:segment)', 'MataKuliah::delete/$1');
