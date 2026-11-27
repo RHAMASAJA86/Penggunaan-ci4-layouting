@@ -46,8 +46,8 @@
 
                     <td><?= esc($dsn['prodi']) ?></td>
                     <td class="actions">
-                        <a class="button" href="<?= site_url('dosen/edit/' . rawurlencode($dsn['nidn'])) ?>">Edit</a>
-                        <form class="inline-form" action="<?= site_url('dosen/delete/' . rawurlencode($dsn['nidn'])) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus data dosen ini?')">
+                        <a class="button" href="<?= site_url('dosen/edit/' . ($dsn['nidn'])) ?>">Edit</a>
+                        <form class="inline-form" action="<?= site_url('dosen/delete/' . ($dsn['nidn'])) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus data dosen ini?')">
                             <?= csrf_field() ?>
                             <button class="button-danger" type="submit">Hapus</button>
                         </form>
