@@ -1,4 +1,4 @@
-# Dokumentasi PBL Pertemuan 13: CRUD Mahasiswa
+# Dokumentasi PBL : CRUD Mahasiswa
 
 ## Ruang lingkup
 
