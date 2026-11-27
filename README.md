@@ -1,69 +1,44 @@
-# CodeIgniter 4 Application Starter
+# Dokumentasi PBL Pertemuan 13: CRUD Mahasiswa
 
-## What is CodeIgniter?
+## Ruang lingkup
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Proyek mengelola data **mahasiswa, dosen, dan mata kuliah** menggunakan CodeIgniter 4, MySQL/MariaDB, serta layout SIAKAD yang dibuat pada praktikum sebelumnya. Mahasiswa memakai NIM, nama, dan program studi dengan `id` otomatis; dosen memakai NIDN, nama, dan program studi; mata kuliah memakai kode, nama, dan jumlah SKS.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Struktur fitur
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- `app/Models/MahasiswaModel.php`, `DosenModel.php`, dan `MataKuliahModel.php` mengatur tabel `mahasiswa`, `dosen`, dan `matakuliah`, beserta primary key (`id`, `nidn`, `kode`) dan field yang boleh disimpan.
+- Controller `Mahasiswa`, `Dosen`, dan `MataKuliah` menangani daftar, formulir tambah/edit, validasi, simpan, ubah, dan hapus.
+- Folder view `mahasiswa/`, `dosen/`, dan `matakuliah/` berisi halaman daftar dan formulir tambah/edit. Tampilan memakai layout bersama di `app/Views/layouts/main.php`.
+- `app/Config/Routes.php` mendaftarkan URL CRUD untuk ketiga data. Aksi yang mengubah data (simpan, ubah, hapus) menggunakan POST.
+- `app/Config/Filters.php` mengaktifkan filter CSRF; semua formulir POST menyertakan token CSRF.
+- `siakad_ci4.sql` berisi pembuatan database, struktur tabel, dan data awal.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Menjalankan aplikasi
 
-## Installation & updates
+1. Import file `siakad_ci4.sql` melalui phpMyAdmin (tab **Import**). File ini otomatis membuat database `siakad_ci4` beserta tabel dan data awalnya. Import ulang akan mereset ketiga tabel ke data awal.
+2. Sesuaikan konfigurasi koneksi database lokal pada `.env` (hostname, database, username, password, dan port). Pada XAMPP bawaan, username `root` dengan password kosong.
+3. Dari direktori proyek, jalankan `php spark serve`.
+4. Buka `http://localhost:8080/mahasiswa`.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Alamat halaman
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+| Halaman | URL |
+| --- | --- |
+| Beranda | `http://localhost:8080/` |
+| Mahasiswa | `http://localhost:8080/mahasiswa` |
+| Dosen | `http://localhost:8080/dosen` |
+| Mata Kuliah | `http://localhost:8080/mata-kuliah` |
+| Tentang | `http://localhost:8080/tentang` |
 
-## Setup
+## Panduan pengujian dan bukti pengumpulan
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+1. Buka halaman **Mahasiswa**, **Dosen**, dan **Mata Kuliah** untuk memastikan daftar memuat data awal.
+2. Pada setiap halaman, pilih tombol **Tambah**, isi field, lalu simpan. Pastikan data tampil di daftar.
+3. Pilih **Edit**, ubah nilai, lalu simpan perubahan.
+4. Pilih **Hapus** dan konfirmasi. Pastikan baris hilang dari daftar.
+5. Coba kirim formulir kosong untuk memastikan validasi menolak data yang tidak lengkap.
+6. Ambil screenshot daftar serta hasil tambah, ubah, dan hapus untuk bukti pengumpulan. Hindari menampilkan password database pada screenshot konfigurasi.
 
-## Important Change with index.php
+## Catatan
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.2 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Konfigurasi database pada `.env` perlu disesuaikan dengan komputer masing-masing. Pengujian interaktif perlu dilakukan pada komputer dengan layanan MySQL/MariaDB aktif.
