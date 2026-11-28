@@ -1,4 +1,24 @@
 # Dokumentasi: CRUD Mahasiswa
+<br>
+<p align="center">
+  <img src="images/beranda.png" alt="Tampilan Halaman Beranda SIAKAD" width="700"><br>
+  <em>Tampilan Halaman Beranda</em>
+</p>
+<br>
+<p align="center">
+  <img src="images/data_mahasiswa.png" alt="Tampilan Halaman Beranda SIAKAD" width="700"><br>
+  <em>Tampilan Halaman Data Mahasiswa</em>
+</p>
+<br>
+<p align="center">
+  <img src="images/data_dosen.png" alt="Tampilan Halaman Beranda SIAKAD" width="700"><br>
+  <em>Tampilan Halaman Data Dosen</em>
+</p>
+<br>
+<p align="center">
+  <img src="images/data_mata_kuliah.png" alt="Tampilan Halaman Beranda SIAKAD" width="700"><br>
+  <em>Tampilan Halaman Data Mata Kuliah</em>
+</p>
 
 ## Ruang lingkup
 
