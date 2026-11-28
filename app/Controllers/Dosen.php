@@ -103,7 +103,7 @@ class Dosen extends BaseController
     private function validationRules(): array
     {
         return [
-            'nidn' => 'required|max_length[20]',
+            'nidn' => 'required|is_natural|max_length[20]',
             'nama' => 'required|max_length[100]',
             'prodi' => 'required|max_length[100]',
         ];

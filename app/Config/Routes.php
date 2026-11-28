@@ -18,9 +18,9 @@ $routes->post('mahasiswa/delete/(:num)', 'Mahasiswa::delete/$1');
 // CRUD Data Dosen
 $routes->get('dosen/create', 'Dosen::create');
 $routes->post('dosen/store', 'Dosen::store');
-$routes->get('dosen/edit/(:segment)', 'Dosen::edit/$1');
-$routes->post('dosen/update/(:segment)', 'Dosen::update/$1');
-$routes->post('dosen/delete/(:segment)', 'Dosen::delete/$1');
+$routes->get('dosen/edit/(:num)', 'Dosen::edit/$1');
+$routes->post('dosen/update/(:num)', 'Dosen::update/$1');
+$routes->post('dosen/delete/(:num)', 'Dosen::delete/$1');
 // CRUD Mata Kuliah
 $routes->get('mata-kuliah/create', 'MataKuliah::create');
 $routes->post('mata-kuliah/store', 'MataKuliah::store');
